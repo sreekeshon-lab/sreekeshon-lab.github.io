@@ -4,474 +4,229 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sreekesh Narayanan, writer</title>
-<meta name="description" content="Sreekesh Narayanan writes technical documentation, edtech blogs, spiritual and festival articles, and sports long reads.">
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Spectral:ital,wght@0,400;0,600;1,400&family=Kalam&display=swap" rel="stylesheet">
+<meta name="description" content="Sreekesh Narayanan writes technical documentation, UX copy, edtech articles, spiritual essays and sports long reads.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#222;
-  --soft:#5a5a5a;
-  --docs:#28508a;     /* documentation link blue */
-  --brass:#a8791c;    /* temple lamp brass */
-  --maroon:#6b1f2b;   /* devotional ink */
-  --rule:#bcd5ec;     /* notebook rule */
-  --margin:#d9534a;   /* notebook margin */
-  --pitch:#1f4b36;    /* sports green */
-  --navy:#1b2f4e;     /* contact */
-  --gold:#e3b45a;
-  --teal:#0e6b66;     /* landing pages */     /* lamp gold on maroon */
-}
+:root{--ink:#1f1a14;--paper:#f3ece0;--sun:#d9a441;--sports:#55702b;--tech:#1f5f6b;--ed:#b4482a;--devo:#5e3a24;--lp:#a5574b}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
-body{font:400 18px/1.65 'Atkinson Hyperlegible',sans-serif;color:var(--ink);background:#fff}
-a{color:inherit;text-underline-offset:3px}
-a:focus-visible{outline:2px solid var(--docs);outline-offset:3px}
-.wrap{max-width:980px;margin:auto;padding:0 22px}
+html,body{overflow-x:clip}
+body{font:400 18px/1.6 'Instrument Sans',sans-serif;color:var(--ink);background:var(--paper)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1160px;margin:auto;padding:0 24px}
+h1,h2,.name,.num,.big{font-family:'Bricolage Grotesque',sans-serif;letter-spacing:-.03em}
 
-header .wrap{position:relative;display:flex;justify-content:space-between;align-items:center;padding-top:28px;padding-bottom:28px}
-header strong{font:600 21px 'Spectral',serif}
-header nav a{margin-left:22px;font-size:16px;color:var(--soft);text-decoration:none}
-header nav a:hover{color:var(--ink);text-decoration:underline}
+header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:3px solid var(--ink)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:68px;position:relative}
+.logo{font:800 22px 'Bricolage Grotesque',sans-serif;text-decoration:none;letter-spacing:-.02em}
+header nav a{margin-left:26px;font-weight:600;text-decoration:none;font-size:16px}
+header nav a:hover{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px}
 .menu{display:none}
-.menu summary{list-style:none;cursor:pointer;padding:6px;margin:-6px;color:var(--ink);display:flex}
+.menu summary{list-style:none;cursor:pointer;display:flex;padding:6px;margin:-6px}
 .menu summary::-webkit-details-marker{display:none}
-.menu>div{position:absolute;right:22px;top:calc(100% - 12px);z-index:10;min-width:210px;background:#fff;border:1px solid #e2e0db;border-radius:10px;box-shadow:0 12px 30px #00000026;padding:8px;animation:rise .25s ease-out both}
-.menu a{display:block;padding:11px 14px;border-radius:6px;font-size:17px;text-decoration:none;color:var(--ink)}
-.menu a:hover,.menu a:focus-visible{background:#f2f1ee}
-.menu hr{border:0;border-top:1px solid #e8e6e1;margin:6px 8px}
+.menu>div{position:absolute;right:24px;top:calc(100% + 3px);background:#fff;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:8px;min-width:220px}
+.menu a{display:block;padding:12px 14px;font-weight:600;text-decoration:none}
+.menu a:hover{background:var(--sun)}
 
-.intro{display:grid;grid-template-columns:400px 1fr;gap:64px;align-items:center;padding-top:56px;padding-bottom:96px}
+.btn{display:inline-block;padding:14px 24px;font-weight:600;text-decoration:none;background:var(--ink);color:#fff;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--sun);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--sun)}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--sun)}
+.btn.wa{background:#3f7d3a}
+.btn.light{background:#fff;color:var(--ink);box-shadow:5px 5px 0 var(--ink);margin-top:36px}
+.btn.light:hover{box-shadow:7px 7px 0 var(--ink)}
+
+.hero{padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(56px,8.5vw,124px);line-height:.92;font-weight:800;margin-bottom:28px}
+.hero h1 em{font-style:normal;background:var(--sun);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;padding:0;list-style:none}
+.roles li{border:2px solid var(--ink);border-radius:99px;padding:4px 14px;font-size:14px;font-weight:600;background:#fffaf2}
+.hero p{max-width:36em}
+.hero p+p{margin-top:14px}
+.hero mark{background:linear-gradient(transparent 55%,var(--sun) 55%);color:inherit;padding:0 .1em}
+.btns{display:flex;flex-wrap:wrap;gap:16px;margin-top:34px}
 .photo{position:relative}
-.track{aspect-ratio:4/5;border-radius:8px;background:#e9e6e1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;aspect-ratio:4/5;border:3px solid var(--ink);box-shadow:14px 14px 0 var(--ed);transform:rotate(1.5deg);background:var(--ink)}
 .track::-webkit-scrollbar{display:none}
-.track img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;display:block;scroll-snap-align:start}
-.photo button{position:absolute;top:50%;translate:0 -50%;width:42px;height:42px;border:0;border-radius:50%;background:#ffffffe6;color:var(--ink);font-size:26px;line-height:1;cursor:pointer;box-shadow:0 2px 8px #0003}
-.photo button:hover{background:#fff}
-.prev{left:12px}.next{right:12px}
-.intro h1{font:400 clamp(40px,5vw,60px)/1.05 'Spectral',serif;letter-spacing:-.01em;margin-bottom:26px}
-.intro .btn{display:inline-block;margin-top:30px;padding:13px 26px;background:var(--navy);color:#fff;border-radius:4px;font-weight:700;text-decoration:none}
-.intro .btn:hover{background:var(--docs)}
-.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btns .btn{margin-top:0}
-.intro .btn.wa{background:#1e8a4c}
-.intro .btn.wa:hover{background:#176e3c}
-.intro p{font-size:19px;line-height:1.7;max-width:34em}
-.intro p+p{margin-top:16px}
-.intro{align-items:start}
-@media(min-width:821px){.intro .photo{position:sticky;top:24px}}
-.intro h1{font-size:clamp(36px,4.4vw,52px)}
-.intro .roles{font-size:16px;color:var(--soft);margin-bottom:22px;line-height:1.6}
-.expertise{padding:72px 0;background:#f6f5f2;border-top:1px solid #e8e6e1}
-.expertise h2{font:400 34px/1.2 'Spectral',serif;margin-bottom:28px}
-.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.exp-grid article{background:#fff;border:1px solid #e6e3dd;border-top:4px solid var(--navy);border-radius:10px;padding:24px 26px;transition:transform .15s,box-shadow .15s;animation:rise .5s ease-out both;animation-delay:calc(var(--i,0)*80ms)}
-.exp-grid article:hover{transform:translateY(-3px);box-shadow:0 10px 24px #0000001a}
-.exp-grid h3{font:700 19px/1.35 'Atkinson Hyperlegible',sans-serif;margin-bottom:10px}
-.exp-grid p{font-size:16px;line-height:1.65;color:#3d3d3d}
-.exp-grid mark{color:inherit;background:#ffe27acc;padding:0 .15em;border-radius:.3em}
-@media(max-width:820px){.expertise{padding:56px 0}.exp-grid{grid-template-columns:1fr}}
-.contents{list-style:none;padding:0;margin-top:40px;border-top:1px solid #ddd}
-.contents li{border-bottom:1px solid #ddd}
-.contents a{display:flex;justify-content:space-between;gap:20px;padding:14px 0;text-decoration:none;font-size:20px}
-.contents a:hover span:first-child{text-decoration:underline}
-.contents span+span{color:var(--soft);font-size:16px;white-space:nowrap}
+.track img{flex:0 0 100%;display:block;width:100%;height:100%;object-fit:cover;scroll-snap-align:start}
+.photo button{position:absolute;top:50%;translate:0 -50%;width:46px;height:46px;border:3px solid var(--ink);background:var(--sun);color:var(--ink);font-size:28px;line-height:1;cursor:pointer;box-shadow:4px 4px 0 var(--ink)}
+.photo button:active{translate:2px calc(-50% + 2px);box-shadow:2px 2px 0 var(--ink)}
+.prev{left:-14px}.next{right:-14px}
+.photo::before{content:'';position:absolute;inset:-18px auto auto -18px;width:90px;height:90px;background:var(--sun);border:3px solid var(--ink);border-radius:50%;z-index:-1}
 
-/* 1. Documentation: set like a docs page */
-.docs{padding:84px 0;background:#f2f6fb;border-top:1px solid #dde7f2}
-.docs .wrap{display:grid;grid-template-columns:240px 1fr;gap:48px}
-.docs h2{font:700 26px/1.25 'Atkinson Hyperlegible',sans-serif;margin-bottom:12px}
-.docs aside p{color:var(--soft);font-size:16px}
-.doc{background:#fff;border-radius:0 6px 6px 0;padding:18px 22px!important;border-left:3px solid var(--docs);padding:4px 0 4px 22px;margin-bottom:34px}
-.doc code{font:400 14px 'Atkinson Hyperlegible',sans-serif;background:#e3ecf7;color:var(--docs);padding:2px 8px;border-radius:3px}
-.doc h3{font:700 22px/1.3 'Atkinson Hyperlegible',sans-serif;margin:10px 0 6px}
-.doc h3 a{color:var(--docs)}
-.doc p{color:#3d3d3d}
-.doc .src{font-size:15px;color:var(--soft);margin-top:6px}
+.exp{background:var(--ink);color:#fff;padding:96px 0}
+.exp h2,.work h2,.jobs-sec h2{font-size:clamp(40px,5.5vw,72px);line-height:1;font-weight:800;margin-bottom:48px}
+.exp h2 span{color:var(--sun)}
+.exp ol{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:2px solid #ffffff33}
+.exp li{padding:32px 32px 36px 0;border-bottom:2px solid #ffffff33}
+.exp li:nth-child(odd){border-right:2px solid #ffffff33}
+.exp li:nth-child(even){padding-left:32px}
+.num{display:block;font-size:44px;font-weight:800;color:var(--sun);line-height:1;margin-bottom:14px}
+.exp h3{font-size:21px;margin-bottom:10px}
+.exp p{color:#ddd2c2;font-size:16px}
+.exp mark{background:none;color:var(--sun)}
 
-.docs .sub{font:700 20px 'Atkinson Hyperlegible',sans-serif;margin:48px 0 8px}
-.bloglist{list-style:none;padding:0 22px;background:#fff;border-radius:6px}
-.bloglist li{display:flex;justify-content:space-between;gap:24px;padding:12px 0;border-bottom:1px solid #e6edf5}
-.bloglist li:last-child{border-bottom:0}
-.bloglist a{color:var(--docs);font-weight:700}
-.bloglist span{color:var(--soft);font-size:15px;white-space:nowrap}
-@media(max-width:600px){.bloglist li{flex-direction:column;gap:2px}.bloglist span{white-space:normal}}
-/* 2. Devotional: set like a printed prayer book */
-.devo{padding:96px 0;background:var(--maroon);text-align:center;color:#f6e9d6}
-.devo h2{font:400 40px/1.2 'Spectral',serif;margin-bottom:12px}
-.devo h2{color:var(--gold)}
-.devo .lead{font:400 19px/1.75 'Spectral',serif;color:#e2c9b4;max-width:30em;margin:0 auto 56px}
-.devo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:left}
-.devo-card{display:flex;flex-direction:column;background:#7d2a37;border:1px solid #8f3a47;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s}
-.devo-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px #00000040}
-.devo-card img{display:block;width:100%;height:auto;aspect-ratio:8/5;object-fit:cover}
-.devo-card div{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
-.devo-card h3{font:600 21px/1.3 'Spectral',serif;color:#fff;margin-bottom:8px}
-.devo-card:hover h3{text-decoration:underline;text-underline-offset:3px}
-.devo-card p{font:italic 400 16px/1.6 'Spectral',serif;color:#ecd9c4;flex:1}
-.devo-card time{font-size:14px;color:var(--gold);margin-top:14px}
-@media(max-width:820px){.devo-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.devo-grid{grid-template-columns:1fr}}
+.work{padding:96px 0 0}
+.work .intro-line{font-size:20px;margin:-28px 0 48px;max-width:30em}
+.block{background:var(--c);color:#fff;border-top:3px solid var(--ink)}
+.block:last-child{border-bottom:3px solid var(--ink)}
+.block-h button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;max-width:1160px;margin:auto;padding:34px 24px;display:flex;align-items:center;gap:24px}
+.block-h button:focus-visible{outline:3px solid var(--sun);outline-offset:-6px}
+.name{font-size:clamp(48px,10vw,140px);font-weight:800;line-height:.9;text-transform:uppercase;transition:transform .35s cubic-bezier(.2,.7,.3,1)}
+.block-h button:hover .name{transform:translateX(18px)}
+.count{font:600 18px 'Instrument Sans',sans-serif;border:2px solid #fff;border-radius:99px;padding:2px 12px;margin-left:auto}
+.plus{width:56px;height:56px;flex:none;border:3px solid #fff;border-radius:50%;position:relative;transition:transform .35s,background .2s}
+.plus::before,.plus::after{content:'';position:absolute;left:50%;top:50%;width:22px;height:3px;background:#fff;transform:translate(-50%,-50%)}
+.plus::after{transform:translate(-50%,-50%) rotate(90deg)}
+[aria-expanded=true] .plus{transform:rotate(135deg);background:#ffffff26}
+.panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.2,.7,.3,1)}
+.panel>div{overflow:hidden}
+.panel>div>.wrap{padding-bottom:64px}
+.block.open .panel{grid-template-rows:1fr}
+.sub{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:28px 0 18px;border-bottom:2px solid #ffffff55;padding-bottom:10px}
+.sub h3{font:700 24px 'Bricolage Grotesque',sans-serif}
+.all{font-weight:600}
+.lead{font-size:19px;max-width:34em;margin:8px 0 28px;color:#ffffffde}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.card{display:flex;flex-direction:column;background:#fffaf2;color:var(--ink);text-decoration:none;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+.card img{display:block;width:100%;height:auto;aspect-ratio:8/5;object-fit:cover;object-position:top;border-bottom:3px solid var(--ink)}
+.card>div{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+.tag{align-self:flex-start;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;background:var(--c);color:#fff;padding:3px 9px;margin-bottom:12px}
+.card h4{font:700 19px/1.25 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em;margin-bottom:8px}
+.card p{font-size:15px;color:#4a4238;flex:1}
+.card small{font-size:14px;color:#6e6457;margin-top:12px}
+.list{list-style:none;padding:0;background:#fffaf2;color:var(--ink);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
+.list li{display:flex;justify-content:space-between;gap:20px;padding:14px 20px;border-bottom:2px solid #efe6d8}
+.list li:last-child{border:0}
+.list a{font-weight:600;text-decoration-color:var(--c);text-decoration-thickness:2px;text-underline-offset:4px}
+.list span{color:#6e6457;font-size:15px;white-space:nowrap}
 
-/* 3. EdTech: set like a ruled notebook page */
-.notes{padding:84px 0;background:#e9eff5}
-.notes h2{font:700 30px/1.2 'Atkinson Hyperlegible',sans-serif;margin-bottom:10px}
-.notes .lead a{color:var(--margin)}
-.notes .more{display:inline-block;margin-top:28px;padding:12px 22px;background:var(--margin);color:#fff;border-radius:4px;font-weight:700;text-decoration:none;transition:transform .2s,background .2s}
-.notes .more:hover{background:#b8433b;transform:translateY(-2px)}
-.notes .lead{color:#4d5966;max-width:36em;margin-bottom:36px}
-.page{box-shadow:0 2px 0 #d3dde8,0 4px 0 #fff,0 6px 0 #d3dde8;position:relative;padding:11px 0 29px 150px;background:repeating-linear-gradient(#fff 0 39px,var(--rule) 39px 40px);border:1px solid #dfe8f1}
-.page::before{content:'';position:absolute;top:0;bottom:0;left:128px;width:2px;background:var(--margin);opacity:.7}
-.note{position:relative;padding-right:24px;margin-bottom:40px;line-height:40px}
-.note:last-child{margin-bottom:0}
-.note h3{font:700 21px/40px 'Atkinson Hyperlegible',sans-serif}
-.note h3 a{text-decoration-color:var(--margin)}
-.note p{font-size:17px;line-height:40px;color:#333;margin:0}
-.note .src{color:var(--soft);font-size:15px}
-.note .scrib{position:absolute;left:-142px;top:6px;width:120px;font:400 15px/1.3 'Kalam',cursive;color:var(--margin);transform:rotate(-4deg);text-align:right}
-
-/* 4. Sports: his own blogs, on a pitch */
-.sports{padding:84px 0;background:#1f4b36;color:#f3f1e8}
-.sports h2{font:700 30px/1.2 'Atkinson Hyperlegible',sans-serif;margin-bottom:10px}
-.sports .lead{color:#c9d8cc;max-width:36em;margin-bottom:44px}
-.blog{margin-bottom:52px}
-.blog:last-child{margin-bottom:0}
-.blog-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;border-bottom:1px solid #ffffff55;padding-bottom:10px;margin-bottom:22px}
-.blog-head h3{font:400 25px 'Spectral',serif}
-.blog-head a{color:#f3f1e8;font-size:16px}
-.matches{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.match{text-decoration:none;color:inherit}
-.match img{width:100%;height:auto;aspect-ratio:8/5;object-fit:cover;display:block;margin-bottom:12px;background:#2c5c45}
-.match h4{font:700 17px/1.35 'Atkinson Hyperlegible',sans-serif;margin-bottom:6px}
-.match:hover h4{text-decoration:underline;text-underline-offset:3px}
-.match p{font-size:14px;color:#b9cbbd}
-@media(max-width:820px){.sports{padding:56px 0}.matches{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.matches{grid-template-columns:1fr}}
-
-/* Fields: pick one, its section shows below */
-.fields{padding:72px 0 40px}
-.fields h2{font:400 34px/1.2 'Spectral',serif;margin-bottom:24px}
-.field-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-@media(min-width:821px){.field-tabs span{font-size:21px;white-space:nowrap}}
-.field-tabs button{padding:0;border:1px solid #e2e0db;border-radius:10px;overflow:hidden;background:#fff;cursor:pointer;text-align:left;box-shadow:0 1px 2px #0000000d;transition:transform .15s,box-shadow .15s}
-.field-tabs img{display:block;width:100%;height:auto;aspect-ratio:32/21;object-fit:cover;filter:saturate(.85)}
-.field-tabs span{display:block;padding:14px 18px;font:400 24px 'Spectral',serif;color:var(--ink);border-top:4px solid var(--c)}
-.field-tabs button:hover{transform:translateY(-3px);box-shadow:0 8px 20px #0000001a}
-.field-tabs button[aria-pressed=true]{border-color:var(--c);box-shadow:0 0 0 2px var(--c),0 8px 20px #00000026}
-.field-tabs button[aria-pressed=true] img{filter:none}
-.field-tabs button[aria-pressed=true] span{background:var(--c);color:#fff}
-.field-tabs button:focus-visible{outline:2px solid var(--c);outline-offset:3px}
-@media(max-width:820px){.field-tabs{grid-template-columns:1fr 1fr}.field-tabs button:last-child{grid-column:1/-1}.field-tabs button:last-child img{aspect-ratio:32/11}.field-tabs span{font-size:20px;padding:12px 14px}}
-
-/* 5. Landing pages: shown in browser windows */
-.landing{padding:84px 0;background:#e4f1ef}
-.landing h2{font:700 30px/1.2 'Atkinson Hyperlegible',sans-serif;margin-bottom:10px}
-.landing .lead{color:#3f5856;max-width:36em;margin-bottom:36px}
-.lp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.lp-card{display:flex;flex-direction:column;background:#fff;border:1px solid #c9e0dc;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 2px 6px #0e6b6614;transition:transform .15s,box-shadow .15s}
-.lp-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px #0e6b6626}
-.bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#f1f5f4;border-bottom:1px solid #dde9e7}
-.bar i{width:9px;height:9px;border-radius:50%;background:#cfd9d7}
-.bar span{margin-left:8px;flex:1;min-width:0;font-size:12px;color:#5d6f6d;background:#fff;border-radius:99px;padding:2px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.lp-card img{display:block;width:100%;height:auto;aspect-ratio:8/5;object-fit:cover;object-position:top;transition:transform .5s}
-.lp-card:hover img{transform:scale(1.04)}
-.lp-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1;border-top:3px solid var(--teal)}
-.lp-body h3{font:700 18px/1.3 'Atkinson Hyperlegible',sans-serif;color:var(--teal);margin-bottom:6px}
-.lp-body p{font-size:15px;color:#3d3d3d;flex:1}
-.lp-body small{font-size:14px;color:var(--soft);margin-top:10px}
-@media(max-width:820px){.landing{padding:56px 0}.lp-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.lp-grid{grid-template-columns:1fr}}
-
-.about{padding:84px 0;border-top:1px solid #e4e4e4}
-.about p{max-width:36em}
-.about h2,.contact h2{font:400 34px/1.2 'Spectral',serif;margin-bottom:18px}
-.about p{font-size:19px}
-.about p+p{margin-top:14px}
-
-.work{padding:84px 0;border-top:1px solid #e4e4e4}
-.work .wrap{display:grid;grid-template-columns:240px 1fr;gap:48px}
-.work h2{font:400 34px/1.2 'Spectral',serif;margin-bottom:12px}
-.work aside p{color:var(--soft);font-size:16px}
+.jobs-sec{background:var(--sun);padding:96px 0;border-bottom:3px solid var(--ink)}
 .jobs{list-style:none;padding:0}
-.jobs li{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:20px 0;border-top:1px solid #e4e4e4}
-.jobs li:last-child{border-bottom:1px solid #e4e4e4}
-.jobs time{color:var(--soft);font-size:15px;padding-top:3px}
-.jobs h3{font:700 19px/1.35 'Atkinson Hyperlegible',sans-serif}
-.jobs h3 span{font-weight:400;color:var(--soft)}
-.jobs p{color:#3d3d3d;font-size:16px;margin-top:4px}
-.facts{display:grid;grid-template-columns:2fr 1fr 1fr;gap:28px;margin-top:40px}
-.facts h3{font:700 16px 'Atkinson Hyperlegible',sans-serif;margin-bottom:6px}
-.facts ul{padding-left:18px;color:#3d3d3d;font-size:16px}
+.jobs li{display:grid;grid-template-columns:230px 1fr;gap:28px;padding:28px 0;border-top:3px solid var(--ink)}
+.jobs time{font-weight:600}
+.jobs h3{font:800 28px/1.1 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em}
+.jobs b{display:block;font-weight:600;margin:4px 0 8px}
+.jobs p{max-width:40em}
+.facts{display:grid;grid-template-columns:2fr 1fr 1fr;gap:22px;margin-top:40px}
+.facts>div{background:#fffaf2;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:22px 24px}
+.facts h3{font:700 20px 'Bricolage Grotesque',sans-serif;margin-bottom:10px}
+.facts ul{padding-left:18px;font-size:16px}
 .facts li+li{margin-top:4px}
-@media(max-width:820px){.work{padding:56px 0}.work .wrap{grid-template-columns:1fr;gap:20px}.jobs li{grid-template-columns:1fr;gap:2px}.facts{grid-template-columns:1fr}}
 
-.contact{padding:84px 0 96px;background:var(--navy);color:#fff}
-.contact h2{color:#fff}
-.contact p{font-size:21px;line-height:1.7}
-.contact a{color:#9cc3f0}
-footer{padding:0 0 40px;background:var(--navy);color:#9aa8bb;font-size:15px}
-footer .wrap{display:flex;align-items:center;gap:16px}
-footer a{color:#c9d6e6;display:flex}
-footer a:hover{color:#fff}
-footer svg{width:22px;height:22px}
+.contact{background:var(--ink);color:#fff;padding:110px 0 40px}
+.big{font-size:clamp(64px,13vw,190px);line-height:.85;font-weight:800;margin-bottom:40px}
+.big span{color:var(--sun)}
+.contact .btn{box-shadow:5px 5px 0 var(--sun);border-color:#fff}
+.contact .btn.mail{background:#fff;color:var(--ink)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:90px;padding-top:24px;border-top:2px solid #ffffff33;color:#b3a796;font-size:15px}
+.foot nav{display:flex;gap:18px}
+.foot a{color:#fff;display:flex;transition:transform .2s,color .2s}
+.foot a:hover{color:var(--sun);transform:translateY(-3px)}
+.foot svg{width:26px;height:26px}
 
-@media(max-width:820px){
- header nav{display:none}
- .menu{display:block}
- .intro{grid-template-columns:1fr;gap:28px;padding-top:24px;padding-bottom:64px}
- .photo{max-width:320px}
- .intro{padding-top:32px;padding-bottom:56px}
- .docs .wrap{grid-template-columns:1fr;gap:20px}
- .docs,.notes,.about{padding:56px 0}
- .devo{padding:64px 0}
- .page{padding-left:40px}
- .page::before{left:24px}
- .note .scrib{position:static;display:block;width:auto;text-align:left;transform:none;line-height:40px}
-}
-
-/* Highlighter marks in the intro */
-@keyframes swipe{from{background-size:0 70%}to{background-size:100% 70%}}
-.intro mark{color:inherit;background:linear-gradient(104deg,#ffe27a00 0,#ffe27acc 2%,#ffd84d99 50%,#ffe27acc 97%,#ffe27a00 100%) no-repeat 0 60%/100% 70%;padding:0 .15em;margin:0 -.05em;border-radius:.3em .5em;box-decoration-break:clone;-webkit-box-decoration-break:clone;animation:swipe .8s ease-out both;animation-delay:calc(var(--i,0)*90ms + 700ms)}
-
-/* Motion */
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.intro .photo,.intro>div>*{animation:rise .7s cubic-bezier(.2,.7,.3,1) both;animation-delay:calc(var(--i,0)*90ms + 100ms)}
-.field-tabs>*{animation:rise .6s cubic-bezier(.2,.7,.3,1) both;animation-delay:calc(var(--i,0)*80ms)}
-#sports,#docs,#edtech,#devotional{animation:rise .45s ease-out both}
-.matches>*,.devo-grid>*,.lp-grid>*,.page>*,.bloglist>*,.docs .doc{animation:rise .5s ease-out both;animation-delay:calc(var(--i,0)*60ms + 120ms)}
-.field-tabs img,.devo-card img{transition:transform .5s ease,filter .3s}
-.field-tabs button:hover img,.devo-card:hover img{transform:scale(1.06)}
-.field-tabs button:active{transform:scale(.98)}
-.intro .btn{transition:background .2s,transform .2s}
-.intro .btn:hover{transform:translateY(-2px)}
-footer a{transition:color .2s,transform .2s}
-footer a:hover{transform:translateY(-2px)}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero h1,.roles,.hero p,.btns,.photo{animation:rise .7s cubic-bezier(.2,.7,.3,1) both}
+.roles{animation-delay:.1s}.hero p{animation-delay:.18s}.btns{animation-delay:.26s}.photo{animation-delay:.15s}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.3,1)}
 .reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+.block.open .card{animation:rise .5s ease-out both;animation-delay:calc(var(--i,0)*60ms + 150ms)}
+
+@media(max-width:860px){
+ header nav{display:none}.menu{display:block}
+ .hero{padding:40px 0 64px}.hero .wrap{grid-template-columns:1fr;gap:44px}.photo{max-width:340px;order:-1}
+ .exp,.work,.jobs-sec{padding-top:64px}.exp,.jobs-sec{padding-bottom:64px}
+ .exp ol{grid-template-columns:1fr}.exp li,.exp li:nth-child(odd),.exp li:nth-child(even){padding:26px 0;border-right:0}
+ .block-h button{padding:24px;gap:12px}.name{font-size:clamp(28px,9vw,64px);min-width:0}.count{display:none}.plus{margin-left:auto}.plus{width:42px;height:42px}.count{font-size:15px}
+ .jobs li{grid-template-columns:1fr;gap:6px}.facts{grid-template-columns:1fr}
+ .list li{flex-direction:column;gap:2px}.list span{white-space:normal}
+ .foot{flex-direction:column-reverse;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
 <header><div class="wrap">
-  <strong>Sreekesh Narayanan</strong>
-  <nav><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
-  <details class="menu"><summary aria-label="Menu"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
-    <div><a href="#sports">Sports</a><a href="#docs">Technical</a><a href="#edtech">EdTech</a><a href="#devotional">Devotional</a><a href="#landing">Landing pages</a><hr><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
+  <a class="logo" href="#top">Sreekesh N.</a>
+  <nav><a href="#expertise">Expertise</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+  <details class="menu"><summary aria-label="Menu"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+    <div><a href="#sports">Sports</a><a href="#technical">Technical</a><a href="#edtech">EdTech</a><a href="#devotional">Devotional</a><a href="#landing">Landing pages</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
   </details>
 </div></header>
 
-<main>
-<div class="wrap intro">
-  <div class="photo"><div class="track"><img src="photo-3.jpg" alt="Sreekesh Narayanan at his desk at Geodis, a landing page on his monitor" width="480" height="600"><img src="photo.jpg" alt="Sreekesh Narayanan standing by a laterite wall with paddy fields and coconut palms behind him" width="472" height="582" loading="lazy"></div><button type="button" class="prev" aria-label="Previous photo">‹</button><button type="button" class="next" aria-label="Next photo">›</button></div>
+<main id="top">
+<section class="hero"><div class="wrap">
   <div>
-    <h1>Hi, I'm Sreekesh Narayanan.</h1>
-    <p class="roles">Technical Content Writer · Product Content Analyst · UX Writer &amp; Content Strategist · Content Writer</p>
-    <p>With over <mark>five years of experience</mark> in technical communication, UX writing, and SEO content strategy, I translate complex software architectures into intuitive user experiences. Holding a B.Sc. in Computer Science and a PG Diploma in Journalism and Communication from Kerala Media Academy, I bridge the gap between software engineering teams and end users.</p>
-    <p>Beyond technical and product documentation, I write long-form cultural essays on <mark>Indian philosophy and wellness</mark> for Hidden Mantra, and manage two independent sports journalism publications, Lines Man Thoughts and Freehit Shots, under Hooman Inks.</p>
+    <h1>Hi, I'm <em>Sreekesh</em> Narayanan.</h1>
+    <ul class="roles"><li>Technical Content Writer</li><li>Product Content Analyst</li><li>UX Writer &amp; Content Strategist</li><li>Content Writer</li></ul>
+    <p>With over <mark>five years of experience</mark> in technical communication, UX writing, and SEO content strategy, I translate complex software architectures into intuitive user experiences. Holding a B.Sc. in Computer Science and a PG Diploma in Journalism and Communication from Kerala Media Academy, I bridge the gap between software engineering teams and end users.</p><p>Beyond technical and product documentation, I write long-form cultural essays on <mark>Indian philosophy and wellness</mark> for Hidden Mantra, and manage two independent sports journalism publications, Lines Man Thoughts and Freehit Shots, under Hooman Inks.</p>
     <div class="btns"><a class="btn" href="mailto:sreekeshon@gmail.com">Email me</a><a class="btn wa" href="https://wa.me/917356676750" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
   </div>
-</div>
-
-<section class="expertise" id="expertise"><div class="wrap">
-  <h2>Core expertise and track record</h2>
-  <div class="exp-grid">
-    <article><h3>SaaS Documentation &amp; Information Architecture</h3><p>Authored end-to-end software manuals, developer reference guides, Standard Operating Procedures (SOPs), and system deployment documents for enterprise supply chain platforms at <mark>Geodis India</mark> and Distinct Infotech Solutions.</p></article>
-    <article><h3>UX Writing &amp; Content Design</h3><p>Crafted clear interface microcopy, multi-step user onboarding flows, and conversion-focused landing pages for global SaaS, e-learning, and travel platforms including Flyscanner.</p></article>
-    <article><h3>SEO Strategy &amp; High-Volume EdTech Content</h3><p>Produced and optimized <mark>over 1,000 search-driven articles</mark>, technical study guides, and career resources at Entri App, leveraging Google Analytics data to drive organic traffic and user engagement.</p></article>
-    <article><h3>Tools &amp; Technical Stack</h3><p>Experienced with Git, Markdown, GitBook, WordPress, Google Analytics, HTML, CSS, and localization-ready documentation workflows.</p></article>
-  </div>
+  <div class="photo"><div class="track"><img src="photo-3.jpg" alt="Sreekesh Narayanan at his desk at Geodis, a landing page on his monitor" width="480" height="600"><img src="photo.jpg" alt="Sreekesh Narayanan standing by a laterite wall with paddy fields and coconut palms behind him" width="472" height="582" loading="lazy"></div><button type="button" class="prev" aria-label="Previous photo">‹</button><button type="button" class="next" aria-label="Next photo">›</button></div>
 </div></section>
 
-<section class="fields" id="work"><div class="wrap">
-  <h2>What I write</h2>
-  <div class="field-tabs">
-    <button type="button" data-for="sports" style="--c:var(--pitch)"><img src="covers/sports.jpg" alt="" width="640" height="420" loading="lazy"><span>Sports</span></button>
-    <button type="button" data-for="docs" style="--c:var(--docs)"><img src="covers/technical.jpg" alt="" width="640" height="420" loading="lazy"><span>Technical</span></button>
-    <button type="button" data-for="edtech" style="--c:var(--margin)"><img src="covers/edtech.jpg" alt="" width="640" height="420" loading="lazy"><span>EdTech</span></button>
-    <button type="button" data-for="devotional" style="--c:var(--maroon)"><img src="covers/devotional.jpg" alt="" width="640" height="420" loading="lazy"><span>Devotional</span></button>
-    <button type="button" data-for="landing" style="--c:var(--teal)"><img src="covers/landing.jpg" alt="" width="640" height="420" loading="lazy"><span>Landing pages</span></button>
-  </div>
+<section class="exp" id="expertise"><div class="wrap">
+  <h2 class="reveal">Core expertise <span>&amp;</span> track record</h2>
+  <ol class="reveal"><li><span class="num">01</span><h3>SaaS Documentation &amp; Information Architecture</h3><p>Authored end-to-end software manuals, developer reference guides, Standard Operating Procedures (SOPs), and system deployment documents for enterprise supply chain platforms at <mark>Geodis India</mark> and Distinct Infotech Solutions.</p></li><li><span class="num">02</span><h3>UX Writing &amp; Content Design</h3><p>Crafted clear interface microcopy, multi-step user onboarding flows, and conversion-focused landing pages for global SaaS, e-learning, and travel platforms including Flyscanner.</p></li><li><span class="num">03</span><h3>SEO Strategy &amp; High-Volume EdTech Content</h3><p>Produced and optimized <mark>over 1,000 search-driven articles</mark>, technical study guides, and career resources at Entri App, leveraging Google Analytics data to drive organic traffic and user engagement.</p></li><li><span class="num">04</span><h3>Tools &amp; Technical Stack</h3><p>Experienced with Git, Markdown, GitBook, WordPress, Google Analytics, HTML, CSS, and localization-ready documentation workflows.</p></li></ol>
 </div></section>
 
-<section class="sports" id="sports"><div class="wrap">
-  <h2>Sports writing</h2>
-  <p class="lead">Long reads on football and cricket that I write for my own two blogs, under the name Hooman Inks.</p>
-  <div class="blog">
-    <div class="blog-head"><h3>Lines Man Thoughts, on football</h3><a href="https://linesmanthoughts.blogspot.com/" target="_blank" rel="noopener">All posts</a></div>
-    <div class="matches">
-      <a class="match" href="https://linesmanthoughts.blogspot.com/2026/07/el-burrito-ortega-story-artists-dont-paint-backward.html" target="_blank" rel="noopener"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEtx_MvMLUAe5Nn0tALnzO4vTUEJtGAuO3_FyXHsDH9zrxZ41Z5c_Nrs-cYFQJ8J33blhCcAHZxHJceqwR4Jt0_ojrdv9zqJzmEfTh6gylsUGLLSMn7SIU8K7-qdvuM6mICswr629qc1FF9N4C5Hih5U0BegCUXQ_xVmpRxvM5vE5o1tjXq_A9mWIj7qMw/w640/o1.jpg" alt="" loading="lazy" width="640" height="400"><h4>A Heart Too Heavy for the Jersey: The Intimate and Tragic Journey of El Burrito</h4><p>15 July 2026, 6 min read</p></a>
-      <a class="match" href="https://linesmanthoughts.blogspot.com/2026/07/the-winged-rebel-tragedy-and-triumph-of.html" target="_blank" rel="noopener"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDdg9vDdL4RbVdDuYGBBiqKz3GRRsjRBHt91_NsBYlyZQOkfFojeQ1OkfCXC1_Rvg-Qy8TuNInuHVOntUvmeHq3-pYRRGUr-r1_n1Y2s76GGAvWqMMhjInN2V6T6aQa3X3IQqO_Nq4mamBB9X3THKI4mFfglrA18lB0NU27JLOXG4ewVXVoRS96CrAMAeb/w640/g1.jpg" alt="" loading="lazy" width="640" height="400"><h4>The Winged Rebel: The Tragedy and Triumph of Garrincha</h4><p>2 July 2026, 6 min read</p></a>
-      <a class="match" href="https://linesmanthoughts.blogspot.com/2026/06/maradona-cult-kerala-political-football.html" target="_blank" rel="noopener"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpYCHYArqoFymF-q_dmxK0YP3IkgfaOJGTtoddALzdlwiyCL1mS35CSHIU45qtFio4KVqixfmd0DTkKXWKrtXDWbF5UaV54FawkJ2LEazHVnRQv5065jNbAwxc3Rk3OpszUaZKaqUf2IzBvEPXqrqXktPb7XJIZplBntVOeT2VaVSNb-su6L35gZiAAoXX/w640/arg4.jpg" alt="" loading="lazy" width="640" height="400"><h4>Monsoons, Manifestos, and Maradona: The Political Romance of Kerala Football</h4><p>16 June 2026, 4 min read</p></a>
-      <a class="match" href="https://linesmanthoughts.blogspot.com/2026/06/velvet-tragedy-dutch-world-cup-history.html" target="_blank" rel="noopener"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFgTe_TZWyoJpQqwboSyNYoIchV78CSwwE2sM9q3rsOxFW2pe1YvwZgmg8aONF3GZBL8CARSf12M9yUlGjb2C_PCMOz7IK7EQ5qKcG4HRIM0XbjMRvBYuxNJrzGFJ0lPkpSo6jPPR7CIpgXmIQy4Cg3blpgQWKddPKjmD4ENd8RjMmFOQcBUk2W15gn6PL/w640/1970s.webp" alt="" loading="lazy" width="640" height="400"><h4>The Velvet Tragedy: A Poetic History of Dutch World Cup Football</h4><p>12 June 2026, 5 min read</p></a>
-    </div>
-  </div>
-  <div class="blog">
-    <div class="blog-head"><h3>Freehit Shots, on cricket</h3><a href="https://freehit-cricket-shots.blogspot.com/" target="_blank" rel="noopener">All posts</a></div>
-    <div class="matches">
-      <a class="match" href="https://freehit-cricket-shots.blogspot.com/2026/06/why-womens-t20-world-cup-2026-overshadowed-fifa.html" target="_blank" rel="noopener"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYnursO18fa8ma23sxdD3q-0dYb0mOS-hQjemkSmjMZ1dCbxnGHkJ804FZWR7MIAnrUSWpI_SBIFtSMoqcT9-QV4m4_hvIdV6lOCSMNTo2sqwdNhtXHCFY0kjs9O3yzb86x_V-22PP7CPgARH1Su6ndK7E4tSBT8IEUn4wp1pBCA8hmnBKnT7k9B_d9SYd/w640/icccw.jpg" alt="" loading="lazy" width="640" height="400"><h4>The Silent Tournament: Why the Women’s T20 World Cup 2026 is Starting in Absolute Silence Today</h4><p>12 June 2026, 6 min read</p></a>
-      <a class="match" href="https://freehit-cricket-shots.blogspot.com/2025/11/cricketindia-wins-blind-womens-t20-world-cup-2025.html" target="_blank" rel="noopener"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgazjkSY9gsxhel4AMD0cAipPzYt8Opbz8OP_SKAL8k_m07AYmgyQxIx_Bbj3deZRs6T4bpPSF2a7bEa-05PkTz1k2_VYDeiyYJbM-mRHyIoRWVeB7Ftx7pnxdRZWBpq2VXTO-6kb9YIcRBpCeZr1RXTdhdoCWxikK2tmh6L1YxfaVCYrBhJtAcIoefXHjq/w640/G6cKNvGbkAA1BMq.jpg" alt="" loading="lazy" width="640" height="400"><h4>India Creates History: Women’s Blind Cricket Team Wins the Inaugural T20 World Cup 2025</h4><p>24 November 2025, 4 min read</p></a>
-      <a class="match" href="https://freehit-cricket-shots.blogspot.com/2025/11/sanju-jadeja-trade-2025.html" target="_blank" rel="noopener"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrfJWtYnLXlCkmU0w6jO2HfSrtIThcVGpcIHadHQNM_BaQ3D_3bPEPcXi87BGBphwe2pR889Ir1SE7A4mTpjsC7alMLKZ2W6lc3fDnU1iH7Gr6git9xAmZwwfq0mFcWDmrvsg2lPDLxWyARleVg2DJygg2aYat_b59GZoq2VrpHcFQpVIUnhPb7_TPg0dq/w640/Sanju-Samson-Ravindra-Jadeja.webp" alt="" loading="lazy" width="640" height="400"><h4>JADEJA SAMSON Trade: A Shot Beyond Sentiments</h4><p>11 November 2025, 3 min read</p></a>
-    </div>
-  </div>
-</div></section>
+<section class="work" id="work">
+  <div class="wrap"><h2 class="reveal">What I write</h2><p class="intro-line reveal">Pick a field to see the work.</p></div>
+  
+<section class="block" id="sports" style="--c:var(--sports)">
+  <h3 class="block-h"><button type="button" aria-expanded="false" aria-controls="sports-panel"><span class="name">Sports</span><span class="count">07</span><span class="plus" aria-hidden="true"></span></button></h3>
+  <div class="panel" id="sports-panel" inert><div><div class="wrap"><div class="sub"><h3>Lines Man Thoughts, on football</h3><a class="all" href="https://linesmanthoughts.blogspot.com/" target="_blank" rel="noopener">All posts ↗</a></div><div class="cards"><a class="card" href="https://linesmanthoughts.blogspot.com/2026/07/el-burrito-ortega-story-artists-dont-paint-backward.html" target="_blank" rel="noopener"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEtx_MvMLUAe5Nn0tALnzO4vTUEJtGAuO3_FyXHsDH9zrxZ41Z5c_Nrs-cYFQJ8J33blhCcAHZxHJceqwR4Jt0_ojrdv9zqJzmEfTh6gylsUGLLSMn7SIU8K7-qdvuM6mICswr629qc1FF9N4C5Hih5U0BegCUXQ_xVmpRxvM5vE5o1tjXq_A9mWIj7qMw/w640/o1.jpg" alt="" loading="lazy" width="640" height="400"><div><h4>A Heart Too Heavy for the Jersey: The Intimate and Tragic Journey of El Burrito</h4><small>15 July 2026, 6 min read</small></div></a><a class="card" href="https://linesmanthoughts.blogspot.com/2026/07/the-winged-rebel-tragedy-and-triumph-of.html" target="_blank" rel="noopener"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDdg9vDdL4RbVdDuYGBBiqKz3GRRsjRBHt91_NsBYlyZQOkfFojeQ1OkfCXC1_Rvg-Qy8TuNInuHVOntUvmeHq3-pYRRGUr-r1_n1Y2s76GGAvWqMMhjInN2V6T6aQa3X3IQqO_Nq4mamBB9X3THKI4mFfglrA18lB0NU27JLOXG4ewVXVoRS96CrAMAeb/w640/g1.jpg" alt="" loading="lazy" width="640" height="400"><div><h4>The Winged Rebel: The Tragedy and Triumph of Garrincha</h4><small>2 July 2026, 6 min read</small></div></a><a class="card" href="https://linesmanthoughts.blogspot.com/2026/06/maradona-cult-kerala-political-football.html" target="_blank" rel="noopener"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpYCHYArqoFymF-q_dmxK0YP3IkgfaOJGTtoddALzdlwiyCL1mS35CSHIU45qtFio4KVqixfmd0DTkKXWKrtXDWbF5UaV54FawkJ2LEazHVnRQv5065jNbAwxc3Rk3OpszUaZKaqUf2IzBvEPXqrqXktPb7XJIZplBntVOeT2VaVSNb-su6L35gZiAAoXX/w640/arg4.jpg" alt="" loading="lazy" width="640" height="400"><div><h4>Monsoons, Manifestos, and Maradona: The Political Romance of Kerala Football</h4><small>16 June 2026, 4 min read</small></div></a><a class="card" href="https://linesmanthoughts.blogspot.com/2026/06/velvet-tragedy-dutch-world-cup-history.html" target="_blank" rel="noopener"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFgTe_TZWyoJpQqwboSyNYoIchV78CSwwE2sM9q3rsOxFW2pe1YvwZgmg8aONF3GZBL8CARSf12M9yUlGjb2C_PCMOz7IK7EQ5qKcG4HRIM0XbjMRvBYuxNJrzGFJ0lPkpSo6jPPR7CIpgXmIQy4Cg3blpgQWKddPKjmD4ENd8RjMmFOQcBUk2W15gn6PL/w640/1970s.webp" alt="" loading="lazy" width="640" height="400"><div><h4>The Velvet Tragedy: A Poetic History of Dutch World Cup Football</h4><small>12 June 2026, 5 min read</small></div></a></div><div class="sub"><h3>Freehit Shots, on cricket</h3><a class="all" href="https://freehit-cricket-shots.blogspot.com/" target="_blank" rel="noopener">All posts ↗</a></div><div class="cards"><a class="card" href="https://freehit-cricket-shots.blogspot.com/2026/06/why-womens-t20-world-cup-2026-overshadowed-fifa.html" target="_blank" rel="noopener"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYnursO18fa8ma23sxdD3q-0dYb0mOS-hQjemkSmjMZ1dCbxnGHkJ804FZWR7MIAnrUSWpI_SBIFtSMoqcT9-QV4m4_hvIdV6lOCSMNTo2sqwdNhtXHCFY0kjs9O3yzb86x_V-22PP7CPgARH1Su6ndK7E4tSBT8IEUn4wp1pBCA8hmnBKnT7k9B_d9SYd/w640/icccw.jpg" alt="" loading="lazy" width="640" height="400"><div><h4>The Silent Tournament: Why the Women’s T20 World Cup 2026 is Starting in Absolute Silence Today</h4><small>12 June 2026, 6 min read</small></div></a><a class="card" href="https://freehit-cricket-shots.blogspot.com/2025/11/cricketindia-wins-blind-womens-t20-world-cup-2025.html" target="_blank" rel="noopener"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgazjkSY9gsxhel4AMD0cAipPzYt8Opbz8OP_SKAL8k_m07AYmgyQxIx_Bbj3deZRs6T4bpPSF2a7bEa-05PkTz1k2_VYDeiyYJbM-mRHyIoRWVeB7Ftx7pnxdRZWBpq2VXTO-6kb9YIcRBpCeZr1RXTdhdoCWxikK2tmh6L1YxfaVCYrBhJtAcIoefXHjq/w640/G6cKNvGbkAA1BMq.jpg" alt="" loading="lazy" width="640" height="400"><div><h4>India Creates History: Women’s Blind Cricket Team Wins the Inaugural T20 World Cup 2025</h4><small>24 November 2025, 4 min read</small></div></a><a class="card" href="https://freehit-cricket-shots.blogspot.com/2025/11/sanju-jadeja-trade-2025.html" target="_blank" rel="noopener"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrfJWtYnLXlCkmU0w6jO2HfSrtIThcVGpcIHadHQNM_BaQ3D_3bPEPcXi87BGBphwe2pR889Ir1SE7A4mTpjsC7alMLKZ2W6lc3fDnU1iH7Gr6git9xAmZwwfq0mFcWDmrvsg2lPDLxWyARleVg2DJygg2aYat_b59GZoq2VrpHcFQpVIUnhPb7_TPg0dq/w640/Sanju-Samson-Ravindra-Jadeja.webp" alt="" loading="lazy" width="640" height="400"><div><h4>JADEJA SAMSON Trade: A Shot Beyond Sentiments</h4><small>11 November 2025, 3 min read</small></div></a></div></div></div></div>
+</section>
+<section class="block" id="technical" style="--c:var(--tech)">
+  <h3 class="block-h"><button type="button" aria-expanded="false" aria-controls="technical-panel"><span class="name">Technical</span><span class="count">13</span><span class="plus" aria-hidden="true"></span></button></h3>
+  <div class="panel" id="technical-panel" inert><div><div class="wrap"><div class="sub"><h3>Documentation</h3></div><div class="cards"><a class="card" href="https://distinct-infotech-solutions.gitbook.io/version-management-process/" target="_blank" rel="noopener"><div><span class="tag">SOP</span><h4>Version management process</h4><p>A simple guide for the whole team on how versions are planned, numbered and released.</p><small>Distinct Infotech Solutions, GitBook</small></div></a><a class="card" href="https://distinct-infotech-solutions.gitbook.io/mobiremit-infrastructure-and-deployment-document/" target="_blank" rel="noopener"><div><span class="tag">Server requirements</span><h4>MobiRemit infrastructure and deployment document</h4><p>The servers, infrastructure and deployment steps for the MobiRemit platform.</p><small>Distinct Infotech Solutions, GitBook</small></div></a></div><div class="sub"><h3>Technical blogs</h3></div><ul class="list"><li><a href="https://www.techmediapost.com/top-full-stack-development-frameworks/" target="_blank" rel="noopener">Top full stack development frameworks to excel in 2024</a><span>TechMedia Post, January 2024</span></li><li><a href="https://technonguide.com/5-reasons-why-the-oet-is-the-best-english-test-for-medical-professionals/" target="_blank" rel="noopener">5 reasons why the OET is the best English test for medical professionals</a><span>Technonguide, January 2024</span></li><li><a href="https://whataftercollege.com/study-abroad/germany-higher-studies-10-things-every-student-must-know-in-2024/" target="_blank" rel="noopener">Germany higher studies: 10 things every student must know in 2024</a><span>What After College, January 2024</span></li><li><a href="https://sugermint.com/the-benefits-of-studying-abroad-and-how-to-maximize-your-experience/" target="_blank" rel="noopener">The benefits of studying abroad and how to make the most of it</a><span>Sugermint</span></li><li><a href="https://sapizon.com/blog/cloud-computing-architecture-a-comprehensive-guide/" target="_blank" rel="noopener">Cloud computing architecture: a comprehensive guide</a><span>Sapizon, March 2022</span></li><li><a href="https://sapizon.com/blog/major-benefits-challenges-and-use-cases-of-cloud-computing/" target="_blank" rel="noopener">Major benefits, challenges and use cases of cloud computing</a><span>Sapizon, March 2022</span></li><li><a href="https://sapizon.com/blog/mobile-app-security-testing-and-testing-tools/" target="_blank" rel="noopener">Mobile app security testing and testing tools</a><span>Sapizon, March 2022</span></li><li><a href="https://sapizon.com/blog/the-mobile-development-stack-beginners-guide/" target="_blank" rel="noopener">The mobile development stack: a beginner's guide</a><span>Sapizon, March 2022</span></li><li><a href="https://sapizon.com/blog/how-much-does-it-cost-to-develop-a-dating-app-like-tinder/" target="_blank" rel="noopener">How much does it cost to develop a dating app like Tinder?</a><span>Sapizon, March 2022</span></li><li><a href="https://sapizon.com/blog/some-common-mistakes-a-tester-makes/" target="_blank" rel="noopener">Some common mistakes a tester makes</a><span>Sapizon, April 2022</span></li><li><a href="https://sapizon.com/blog/virtual-reality-in-education-an-overview/" target="_blank" rel="noopener">Virtual reality in education: an overview</a><span>Sapizon, February 2022</span></li></ul></div></div></div>
+</section>
+<section class="block" id="edtech" style="--c:var(--ed)">
+  <h3 class="block-h"><button type="button" aria-expanded="false" aria-controls="edtech-panel"><span class="name">EdTech</span><span class="count">08</span><span class="plus" aria-hidden="true"></span></button></h3>
+  <div class="panel" id="edtech-panel" inert><div><div class="wrap"><p class="lead">More than 1,000 articles for Entri: exam notes, recruitment updates and career guides. A few of them:</p><div class="cards"><a class="card" href="https://entri.app/blog/how-to-build-a-data-scientist-portfolio/" target="_blank" rel="noopener"><div><span class="tag">career guide</span><h4>How to build a data scientist portfolio</h4><p>What makes a strong data science portfolio, and how one helps you move up in your career.</p><small>Entri, April 2024</small></div></a><a class="card" href="https://entri.app/blog/classical-mechanics-vs-quantum-mechanics-upsc-notes/" target="_blank" rel="noopener"><div><span class="tag">UPSC notes</span><h4>Classical mechanics vs quantum mechanics</h4><p>The key differences, concepts and principles, with a quiz for UPSC aspirants.</p><small>Entri, September 2024</small></div></a><a class="card" href="https://entri.app/blog/gate-electronics-communication-engineering-notes/" target="_blank" rel="noopener"><div><span class="tag">GATE notes</span><h4>GATE electronics and communication engineering notes</h4><p>Subject-wise notes for the GATE ECE paper.</p><small>Entri, August 2024</small></div></a><a class="card" href="https://entri.app/blog/gate-mechanical-engineering-notes/" target="_blank" rel="noopener"><div><span class="tag">GATE notes</span><h4>GATE mechanical engineering notes</h4><p>Topic-wise notes for the GATE mechanical paper.</p><small>Entri, August 2024</small></div></a><a class="card" href="https://entri.app/blog/gate-civil-engineering-notes/" target="_blank" rel="noopener"><div><span class="tag">GATE notes</span><h4>GATE civil engineering notes</h4><p>Subject-wise notes for the GATE civil paper.</p><small>Entri, August 2024</small></div></a><a class="card" href="https://entri.app/blog/gate-electrical-engineering-notes/" target="_blank" rel="noopener"><div><span class="tag">GATE notes</span><h4>GATE electrical engineering notes</h4><p>Topic-wise notes for the GATE electrical paper.</p><small>Entri, August 2024</small></div></a><a class="card" href="https://entri.app/blog/lic-hfl-junior-assistant-exam-date/" target="_blank" rel="noopener"><div><span class="tag">bank exams</span><h4>LIC HFL junior assistant exam date</h4><p>Important dates and how to apply for the 200 junior assistant posts.</p><small>Entri, August 2024</small></div></a><a class="card" href="https://entri.app/blog/union-bank-of-india-apprentice-recruitment/" target="_blank" rel="noopener"><div><span class="tag">bank exams</span><h4>Union Bank of India apprentice recruitment</h4><p>Everything candidates need to apply for the 500 apprentice posts.</p><small>Entri, August 2024</small></div></a></div><a class="btn light" href="https://entri.app/blog/author/sreekesh/" target="_blank" rel="noopener">See all my articles on Entri ↗</a></div></div></div>
+</section>
+<section class="block" id="devotional" style="--c:var(--devo)">
+  <h3 class="block-h"><button type="button" aria-expanded="false" aria-controls="devotional-panel"><span class="name">Devotional</span><span class="count">05</span><span class="plus" aria-hidden="true"></span></button></h3>
+  <div class="panel" id="devotional-panel" inert><div><div class="wrap"><p class="lead">Long-form essays on Indian festivals, Buddhism, yoga and Ayurveda for Hidden Mantra.</p><div class="cards"><a class="card" href="https://hiddenmantra.com/festival-in-india/navaratri/" target="_blank" rel="noopener"><img src="covers/devo-navaratri.jpg" alt="" loading="lazy" width="640" height="400"><div><h4>9 days of Navaratri</h4><p>The story behind the festival, and the rituals and celebrations of each of its nine days.</p><small>September 2024</small></div></a><a class="card" href="https://hiddenmantra.com/festival-in-india/navratri-fasting-diet-plan/" target="_blank" rel="noopener"><img src="covers/devo-navratri-fasting-diet-plan.jpg" alt="" loading="lazy" width="640" height="400"><div><h4>Navratri fasting diet plan</h4><p>A nine-day plan for keeping your health and energy up while you fast through the festival.</p><small>October 2024</small></div></a><a class="card" href="https://hiddenmantra.com/buddhist-insights/goal-of-buddhism/" target="_blank" rel="noopener"><img src="covers/devo-goal-of-buddhism.jpg" alt="" loading="lazy" width="640" height="400"><div><h4>Is enlightenment or ethics the main goal of Buddhism?</h4><p>How moral conduct, meditation and wisdom work together on the path to nirvana.</p><small>July 2024</small></div></a><a class="card" href="https://hiddenmantra.com/buddhist-insights/dream-yoga/" target="_blank" rel="noopener"><img src="covers/devo-dream-yoga.jpg" alt="" loading="lazy" width="640" height="400"><div><h4>The Tibetan dream yoga journey</h4><p>Why Tibetan Buddhism treats dreams as a way to understand consciousness, and how the practice works.</p><small>August 2024</small></div></a><a class="card" href="https://hiddenmantra.com/yoga-flow/yoga-and-ayurveda/" target="_blank" rel="noopener"><img src="covers/devo-yoga-and-ayurveda.jpg" alt="" loading="lazy" width="640" height="400"><div><h4>India's gift to the world: yoga and Ayurveda</h4><p>Where yoga and Ayurveda come from in the Vedas, and why yoga is much more than its poses.</p><small>August 2024</small></div></a></div></div></div></div>
+</section>
+<section class="block" id="landing" style="--c:var(--lp)">
+  <h3 class="block-h"><button type="button" aria-expanded="false" aria-controls="landing-panel"><span class="name">Landing pages</span><span class="count">06</span><span class="plus" aria-hidden="true"></span></button></h3>
+  <div class="panel" id="landing-panel" inert><div><div class="wrap"><p class="lead">Conversion-focused page copy for course and service pages.</p><div class="cards"><a class="card" href="https://flyscanneronline.com/global-visa/" target="_blank" rel="noopener"><img src="covers/lp-flyscanner.jpg" alt="" loading="lazy" width="640" height="400"><div><span class="tag">flyscanneronline.com</span><h4>Global visa services</h4><p>Landing page copy for Flyscanner's visa service, covering applications for more than 90 countries.</p><small>Flyscanner, freelance</small></div></a><a class="card" href="https://entri.app/exam/bank-exam-coaching-online/" target="_blank" rel="noopener"><img src="covers/lp-bank-exam-coaching-online.jpg" alt="" loading="lazy" width="640" height="400"><div><span class="tag">entri.app</span><h4>Best online bank coaching in Kerala</h4><p>Course page for Entri's coaching for IBPS, SBI, RBI and Kerala Bank exams.</p><small>Entri</small></div></a><a class="card" href="https://entri.app/exam/ssc-online-coaching/" target="_blank" rel="noopener"><img src="covers/lp-ssc-online-coaching.jpg" alt="" loading="lazy" width="640" height="400"><div><span class="tag">entri.app</span><h4>SSC online coaching in Kerala</h4><p>Course page for SSC CGL, CHSL, MTS, GD and other SSC exam coaching.</p><small>Entri</small></div></a><a class="card" href="https://entri.app/exam/rrb-exams-coaching/" target="_blank" rel="noopener"><img src="covers/lp-rrb-exams-coaching.jpg" alt="" loading="lazy" width="640" height="400"><div><span class="tag">entri.app</span><h4>RRB online coaching in Kerala</h4><p>Course page for Railway Recruitment Board exam coaching.</p><small>Entri</small></div></a><a class="card" href="https://entri.app/exam/rrb-ntpc-exam-coaching/" target="_blank" rel="noopener"><img src="covers/lp-rrb-ntpc-exam-coaching.jpg" alt="" loading="lazy" width="640" height="400"><div><span class="tag">entri.app</span><h4>Best RRB NTPC online coaching in Kerala</h4><p>Course page for RRB NTPC coaching, covering faculty, syllabus and test series.</p><small>Entri</small></div></a><a class="card" href="https://entri.app/exam/ibps-clerk-online-coaching/" target="_blank" rel="noopener"><img src="covers/lp-ibps-clerk-online-coaching.jpg" alt="" loading="lazy" width="640" height="400"><div><span class="tag">entri.app</span><h4>IBPS Clerk online coaching</h4><p>Course page for IBPS Clerk prelims and mains coaching.</p><small>Entri</small></div></a></div></div></div></div>
+</section>
+</section>
 
-<section class="docs" id="docs"><div class="wrap">
-  <aside>
-    <h2>Technical writing</h2>
-    <p>Process documents and infrastructure guides for software teams, and blogs on cloud, mobile development and testing for tech companies.</p>
-  </aside>
-  <div>
-    <article class="doc">
-      <code>SOP</code>
-      <h3><a href="https://distinct-infotech-solutions.gitbook.io/version-management-process/" target="_blank" rel="noopener">Version management process</a></h3>
-      <p>A simple guide for the whole team on how versions are planned, numbered and released.</p>
-      <p class="src">Distinct Infotech Solutions, GitBook</p>
-    </article>
-    <article class="doc">
-      <code>Server requirements</code>
-      <h3><a href="https://distinct-infotech-solutions.gitbook.io/mobiremit-infrastructure-and-deployment-document/" target="_blank" rel="noopener">MobiRemit infrastructure and deployment document</a></h3>
-      <p>The servers, infrastructure and deployment steps for the MobiRemit platform.</p>
-      <p class="src">Distinct Infotech Solutions, GitBook</p>
-    </article>
-    <h3 class="sub">Technical blogs</h3>
-    <ul class="bloglist">
-      <li><a href="https://www.techmediapost.com/top-full-stack-development-frameworks/" target="_blank" rel="noopener">Top full stack development frameworks to excel in 2024</a><span>TechMedia Post, January 2024</span></li>
-      <li><a href="https://technonguide.com/5-reasons-why-the-oet-is-the-best-english-test-for-medical-professionals/" target="_blank" rel="noopener">5 reasons why the OET is the best English test for medical professionals</a><span>Technonguide, January 2024</span></li>
-      <li><a href="https://whataftercollege.com/study-abroad/germany-higher-studies-10-things-every-student-must-know-in-2024/" target="_blank" rel="noopener">Germany higher studies: 10 things every student must know in 2024</a><span>What After College, January 2024</span></li>
-      <li><a href="https://sugermint.com/the-benefits-of-studying-abroad-and-how-to-maximize-your-experience/" target="_blank" rel="noopener">The benefits of studying abroad and how to make the most of it</a><span>Sugermint</span></li>
-      <li><a href="https://sapizon.com/blog/cloud-computing-architecture-a-comprehensive-guide/" target="_blank" rel="noopener">Cloud computing architecture: a comprehensive guide</a><span>Sapizon, March 2022</span></li>
-      <li><a href="https://sapizon.com/blog/major-benefits-challenges-and-use-cases-of-cloud-computing/" target="_blank" rel="noopener">Major benefits, challenges and use cases of cloud computing</a><span>Sapizon, March 2022</span></li>
-      <li><a href="https://sapizon.com/blog/mobile-app-security-testing-and-testing-tools/" target="_blank" rel="noopener">Mobile app security testing and testing tools</a><span>Sapizon, March 2022</span></li>
-      <li><a href="https://sapizon.com/blog/the-mobile-development-stack-beginners-guide/" target="_blank" rel="noopener">The mobile development stack: a beginner's guide</a><span>Sapizon, March 2022</span></li>
-      <li><a href="https://sapizon.com/blog/how-much-does-it-cost-to-develop-a-dating-app-like-tinder/" target="_blank" rel="noopener">How much does it cost to develop a dating app like Tinder?</a><span>Sapizon, March 2022</span></li>
-      <li><a href="https://sapizon.com/blog/some-common-mistakes-a-tester-makes/" target="_blank" rel="noopener">Some common mistakes a tester makes</a><span>Sapizon, April 2022</span></li>
-      <li><a href="https://sapizon.com/blog/virtual-reality-in-education-an-overview/" target="_blank" rel="noopener">Virtual reality in education: an overview</a><span>Sapizon, February 2022</span></li>
-    </ul>
-  </div>
-</div></section>
-
-<section class="notes" id="edtech"><div class="wrap">
-  <h2>EdTech blogs</h2>
-  <p class="lead">More than 1,000 articles for <a href="https://entri.app/blog/author/sreekesh/" target="_blank" rel="noopener">Entri's blog</a>: exam notes, recruitment updates and career guides for students across India. A few of them:</p>
-  <div class="page">
-    <article class="note">
-      <span class="scrib">career guide</span>
-      <h3><a href="https://entri.app/blog/how-to-build-a-data-scientist-portfolio/" target="_blank" rel="noopener">How to build a data scientist portfolio</a></h3>
-      <p>What makes a strong data science portfolio, and how one helps you move up in your career.</p>
-      <p class="src">Entri, April 2024</p>
-    </article>
-    <article class="note">
-      <span class="scrib">UPSC notes</span>
-      <h3><a href="https://entri.app/blog/classical-mechanics-vs-quantum-mechanics-upsc-notes/" target="_blank" rel="noopener">Classical mechanics vs quantum mechanics</a></h3>
-      <p>The key differences, concepts and principles, with a quiz for UPSC aspirants.</p>
-      <p class="src">Entri, September 2024</p>
-    </article>
-    <article class="note">
-      <span class="scrib">GATE notes</span>
-      <h3><a href="https://entri.app/blog/gate-electronics-communication-engineering-notes/" target="_blank" rel="noopener">GATE electronics and communication engineering notes</a></h3>
-      <p>Subject-wise notes for the GATE ECE paper.</p>
-      <p class="src">Entri, August 2024</p>
-    </article>
-    <article class="note">
-      <span class="scrib">GATE notes</span>
-      <h3><a href="https://entri.app/blog/gate-mechanical-engineering-notes/" target="_blank" rel="noopener">GATE mechanical engineering notes</a></h3>
-      <p>Topic-wise notes for the GATE mechanical paper.</p>
-      <p class="src">Entri, August 2024</p>
-    </article>
-    <article class="note">
-      <span class="scrib">GATE notes</span>
-      <h3><a href="https://entri.app/blog/gate-civil-engineering-notes/" target="_blank" rel="noopener">GATE civil engineering notes</a></h3>
-      <p>Subject-wise notes for the GATE civil paper.</p>
-      <p class="src">Entri, August 2024</p>
-    </article>
-    <article class="note">
-      <span class="scrib">GATE notes</span>
-      <h3><a href="https://entri.app/blog/gate-electrical-engineering-notes/" target="_blank" rel="noopener">GATE electrical engineering notes</a></h3>
-      <p>Topic-wise notes for the GATE electrical paper.</p>
-      <p class="src">Entri, August 2024</p>
-    </article>
-    <article class="note">
-      <span class="scrib">bank exams</span>
-      <h3><a href="https://entri.app/blog/lic-hfl-junior-assistant-exam-date/" target="_blank" rel="noopener">LIC HFL junior assistant exam date</a></h3>
-      <p>Important dates and how to apply for the 200 junior assistant posts.</p>
-      <p class="src">Entri, August 2024</p>
-    </article>
-    <article class="note">
-      <span class="scrib">bank exams</span>
-      <h3><a href="https://entri.app/blog/union-bank-of-india-apprentice-recruitment/" target="_blank" rel="noopener">Union Bank of India apprentice recruitment</a></h3>
-      <p>Everything candidates need to apply for the 500 apprentice posts.</p>
-      <p class="src">Entri, August 2024</p>
-    </article>
-  </div>
-  <a class="more" href="https://entri.app/blog/author/sreekesh/" target="_blank" rel="noopener">See all my articles on Entri</a>
-</div></section>
-
-<section class="devo" id="devotional"><div class="wrap">
-  <h2>Spiritual and festival writing</h2>
-  <p class="lead">Articles on Indian festivals, Buddhism, yoga and Ayurveda for Hidden Mantra.</p>
-
-  <div class="devo-grid">
-    <a class="devo-card" href="https://hiddenmantra.com/festival-in-india/navaratri/" target="_blank" rel="noopener"><img src="covers/devo-navaratri.jpg" alt="" width="640" height="400" loading="lazy"><div><h3>9 days of Navaratri</h3><p>The story behind the festival, and the rituals and celebrations of each of its nine days.</p><time>September 2024</time></div></a>
-    <a class="devo-card" href="https://hiddenmantra.com/festival-in-india/navratri-fasting-diet-plan/" target="_blank" rel="noopener"><img src="covers/devo-navratri-fasting-diet-plan.jpg" alt="" width="640" height="400" loading="lazy"><div><h3>Navratri fasting diet plan</h3><p>A nine-day plan for keeping your health and energy up while you fast through the festival.</p><time>October 2024</time></div></a>
-    <a class="devo-card" href="https://hiddenmantra.com/buddhist-insights/goal-of-buddhism/" target="_blank" rel="noopener"><img src="covers/devo-goal-of-buddhism.jpg" alt="" width="640" height="400" loading="lazy"><div><h3>Is enlightenment or ethics the main goal of Buddhism?</h3><p>How moral conduct, meditation and wisdom work together on the path to nirvana.</p><time>July 2024</time></div></a>
-    <a class="devo-card" href="https://hiddenmantra.com/buddhist-insights/dream-yoga/" target="_blank" rel="noopener"><img src="covers/devo-dream-yoga.jpg" alt="" width="640" height="400" loading="lazy"><div><h3>The Tibetan dream yoga journey</h3><p>Why Tibetan Buddhism treats dreams as a way to understand consciousness, and how the practice works.</p><time>August 2024</time></div></a>
-    <a class="devo-card" href="https://hiddenmantra.com/yoga-flow/yoga-and-ayurveda/" target="_blank" rel="noopener"><img src="covers/devo-yoga-and-ayurveda.jpg" alt="" width="640" height="400" loading="lazy"><div><h3>India's gift to the world: yoga and Ayurveda</h3><p>Where yoga and Ayurveda come from in the Vedas, and why yoga is much more than its poses.</p><time>August 2024</time></div></a>
-  </div>
-</div></section>
-
-<section class="landing" id="landing"><div class="wrap">
-  <h2>Landing pages</h2>
-  <p class="lead">Conversion-focused page copy for course and service pages.</p>
-  <div class="lp-grid">
-    <a class="lp-card" href="https://flyscanneronline.com/global-visa/" target="_blank" rel="noopener"><div class="bar"><i></i><i></i><i></i><span>flyscanneronline.com/global-visa</span></div><img src="covers/lp-flyscanner.jpg" alt="" width="640" height="400" loading="lazy"><div class="lp-body"><h3>Global visa services</h3><p>Landing page copy for Flyscanner's visa service, covering applications for more than 90 countries.</p><small>Flyscanner, freelance</small></div></a>
-    <a class="lp-card" href="https://entri.app/exam/bank-exam-coaching-online/" target="_blank" rel="noopener"><div class="bar"><i></i><i></i><i></i><span>entri.app/exam/bank-exam-coaching-online</span></div><img src="covers/lp-bank-exam-coaching-online.jpg" alt="" width="640" height="400" loading="lazy"><div class="lp-body"><h3>Best online bank coaching in Kerala</h3><p>Course page for Entri's coaching for IBPS, SBI, RBI and Kerala Bank exams.</p><small>Entri</small></div></a>
-    <a class="lp-card" href="https://entri.app/exam/ssc-online-coaching/" target="_blank" rel="noopener"><div class="bar"><i></i><i></i><i></i><span>entri.app/exam/ssc-online-coaching</span></div><img src="covers/lp-ssc-online-coaching.jpg" alt="" width="640" height="400" loading="lazy"><div class="lp-body"><h3>SSC online coaching in Kerala</h3><p>Course page for SSC CGL, CHSL, MTS, GD and other SSC exam coaching.</p><small>Entri</small></div></a>
-    <a class="lp-card" href="https://entri.app/exam/rrb-exams-coaching/" target="_blank" rel="noopener"><div class="bar"><i></i><i></i><i></i><span>entri.app/exam/rrb-exams-coaching</span></div><img src="covers/lp-rrb-exams-coaching.jpg" alt="" width="640" height="400" loading="lazy"><div class="lp-body"><h3>RRB online coaching in Kerala</h3><p>Course page for Railway Recruitment Board exam coaching.</p><small>Entri</small></div></a>
-    <a class="lp-card" href="https://entri.app/exam/rrb-ntpc-exam-coaching/" target="_blank" rel="noopener"><div class="bar"><i></i><i></i><i></i><span>entri.app/exam/rrb-ntpc-exam-coaching</span></div><img src="covers/lp-rrb-ntpc-exam-coaching.jpg" alt="" width="640" height="400" loading="lazy"><div class="lp-body"><h3>Best RRB NTPC online coaching in Kerala</h3><p>Course page for RRB NTPC coaching, covering faculty, syllabus and test series.</p><small>Entri</small></div></a>
-    <a class="lp-card" href="https://entri.app/exam/ibps-clerk-online-coaching/" target="_blank" rel="noopener"><div class="bar"><i></i><i></i><i></i><span>entri.app/exam/ibps-clerk-online-coaching</span></div><img src="covers/lp-ibps-clerk-online-coaching.jpg" alt="" width="640" height="400" loading="lazy"><div class="lp-body"><h3>IBPS Clerk online coaching</h3><p>Course page for IBPS Clerk prelims and mains coaching.</p><small>Entri</small></div></a>
-  </div>
-</div></section>
-
-<section class="work" id="experience"><div class="wrap">
-  <aside>
-    <h2>Experience</h2>
-    <p>A PG Diploma in Journalism and a B.Sc. in Computer Science, so I can talk to engineers and still write for readers.</p>
-  </aside>
-  <div>
-    <ol class="jobs">
-      <li><time>April 2025 to now</time><div><h3>Product Content Analyst <span>at Geodis India</span></h3><p>Documentation, reference guides and manuals for supply chain software, plus UX copy for landing pages, onboarding flows and product blogs.</p></div></li>
-      <li><time>May 2022 to April 2025</time><div><h3>Content Writer <span>at Entri</span></h3><p>Articles, step-by-step guides and interface text for an e-learning platform, updated using Google Analytics data.</p></div></li>
-      <li><time>January to April 2022</time><div><h3>Technical Writer <span>at Sapizon Technologies</span></h3><p>Instruction manuals and project documents written with developers and product managers.</p></div></li>
-      <li><time>October 2020 to October 2021</time><div><h3>Digital Content and Website Specialist <span>at New Year News</span></h3><p>Ran the WordPress site, from publishing and categories to search keyword research.</p></div></li>
-    </ol>
-    <div class="facts">
+<section class="jobs-sec" id="experience"><div class="wrap">
+  <h2 class="reveal">Experience</h2>
+  <ol class="jobs reveal"><li><time>April 2025 to now</time><div><h3>Product Content Analyst</h3><b>at Geodis India</b><p>Documentation, reference guides and manuals for supply chain software, plus UX copy for landing pages, onboarding flows and product blogs.</p></div></li><li><time>May 2022 to April 2025</time><div><h3>Content Writer</h3><b>at Entri</b><p>Articles, step-by-step guides and interface text for an e-learning platform, updated using Google Analytics data.</p></div></li><li><time>January to April 2022</time><div><h3>Technical Writer</h3><b>at Sapizon Technologies</b><p>Instruction manuals and project documents written with developers and product managers.</p></div></li><li><time>October 2020 to October 2021</time><div><h3>Digital Content and Website Specialist</h3><b>at New Year News</b><p>Ran the WordPress site, from publishing and categories to search keyword research.</p></div></li></ol>
+  <div class="facts reveal">
       <div><h3>Education</h3><ul><li>PG Diploma in Journalism and Communication, Kerala Media Academy</li><li>B.Sc. in Computer Science, Sadanam Institute of Commerce and Management Studies</li></ul></div>
       <div><h3>Languages</h3><ul><li>English</li><li>Malayalam</li><li>Hindi</li></ul></div>
-      <div><h3>Tools</h3><ul><li>WordPress</li><li>Git</li><li>Markdown</li><li>GitBook</li><li>Google Analytics</li><li>Basic HTML and CSS</li></ul></div>
-    </div>
-  </div>
+      <div><h3>Tools</h3><ul><li>WordPress</li><li>Git</li><li>Markdown</li><li>GitBook</li><li>Google Analytics</li><li>Basic HTML and CSS</li></ul></div></div>
 </div></section>
 
 <section class="contact" id="contact"><div class="wrap">
-  <h2>Contact</h2>
-  <p>Email me at <a href="mailto:sreekeshon@gmail.com">sreekeshon@gmail.com</a> or <a href="https://wa.me/917356676750" target="_blank" rel="noopener">chat with me on WhatsApp</a>.</p>
-</div></section>
-</main>
-
-<footer><div class="wrap"><span>Sreekesh Narayanan, Thrissur</span>
+  <p class="big reveal">Let's<br>talk<span>.</span></p>
+  <div class="btns"><a class="btn mail" href="mailto:sreekeshon@gmail.com">sreekeshon@gmail.com</a><a class="btn wa" href="https://wa.me/917356676750" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+  <div class="foot"><span>Sreekesh Narayanan, Thrissur</span><nav>
   <a href="https://www.linkedin.com/in/sreekesh-o-n-2255ottur/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
   <a href="https://www.instagram.com/sreekesh_narayanan/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg></a>
   <a href="https://medium.com/@sreekeshon" target="_blank" rel="noopener" aria-label="Medium"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg></a>
-</div></footer>
+</nav></div>
+</div></section>
+</main>
 
 <script>
-const tabs=document.querySelectorAll('.field-tabs button');
-function show(id){tabs.forEach(b=>{const on=b.dataset.for===id;b.setAttribute('aria-pressed',on);document.getElementById(b.dataset.for).hidden=!on})}
-tabs.forEach(b=>b.onclick=()=>{const id=b.getAttribute('aria-pressed')==='true'?null:b.dataset.for;show(id);if(id)document.getElementById(id).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})});
-document.querySelectorAll('.intro>div,.exp-grid,.lp-grid,.field-tabs,.matches,.devo-grid,.page,.bloglist,.docs aside+div').forEach(g=>[...g.children].forEach((c,i)=>c.style.setProperty('--i',i)));
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
-document.querySelectorAll('.fields h2,.work .wrap>*,.contact .wrap').forEach(el=>{el.classList.add('reveal');io.observe(el)});
-document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>{const id=a.hash.slice(1);if([...tabs].some(b=>b.dataset.for===id))show(id);a.closest('details').open=false}));
-show();
+const blocks=[...document.querySelectorAll('.block')];
+function open(id,scroll){blocks.forEach(b=>{const on=b.id===id;b.classList.toggle('open',on);b.querySelector('button').setAttribute('aria-expanded',on);b.querySelector('.panel').inert=!on});
+  if(id&&scroll)setTimeout(()=>document.getElementById(id).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'}),580)}
+blocks.forEach(b=>b.querySelector('button').onclick=()=>open(b.classList.contains('open')?null:b.id,true));
+document.querySelectorAll('.cards').forEach(g=>[...g.children].forEach((c,i)=>c.style.setProperty('--i',i)));
+document.querySelectorAll('.menu a').forEach(a=>a.onclick=e=>{const id=a.hash.slice(1);if(blocks.some(b=>b.id===id)){e.preventDefault();open(id,true)}a.closest('details').open=false});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.querySelectorAll('.photo button').forEach(b=>b.onclick=()=>{const t=b.parentNode.querySelector('.track'),max=t.scrollWidth-t.clientWidth,x=t.scrollLeft+(b.className=='next'?1:-1)*t.clientWidth;t.scrollTo({left:x>max+5?0:x<-5?max:x,behavior:'smooth'})});
 </script>
 </body>
